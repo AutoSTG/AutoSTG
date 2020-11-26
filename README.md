@@ -1,6 +1,4 @@
-# AutoSTG: Neural Architecture Search forPredictions of Spatio-Temporal Graph
-
-![Framework](./resources/framework.png)
+# AutoSTG
 
 This is the PyTorch implementation of AutoSTG.
 
