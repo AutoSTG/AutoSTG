@@ -47,10 +47,10 @@ The description please refers to the repository of [DCRNN](https://github.com/li
 3. All trained model will be saved in `param/`. 
 4. Searching and training with the given shell script:
    1. `cd src/` .
-   2. `bash run_on_gpu0.sh`. The code will firstly load the best epoch from `params/`, and then train the models for `[num_epoch]`. 
+   2. `bash run_on_gpu0.sh`. The code will firstly load the best epoch from `params/`, and then train the models for `[epoch]`. 
 6. Testing the model for PEMS-BAY on GPU 0: 
     ```
-    CUDA_VISIBLE_DEVICES=0 python train.py --config ../model/PEMS_BAY_FULL.yaml
+    CUDA_VISIBLE_DEVICES=0 python train.py --config ../model/PEMS_BAY_FULL.yaml --epoch 0
     ``` 
    The code will directly give evaluation results on evaluation dataset and test dataset, without training.
 
