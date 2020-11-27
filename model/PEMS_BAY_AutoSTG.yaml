@@ -14,7 +14,7 @@ data:
   valid_prop: 0.1
 
 model:
-  name: PEMS_BAY_AUTOSTG1
+  name: PEMS_BAY_AutoSTG
   node_hiddens: [32,32]
   edge_hiddens: [32,32]
   hidden_channels: 32

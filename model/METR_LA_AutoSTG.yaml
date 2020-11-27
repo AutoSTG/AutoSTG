@@ -14,7 +14,7 @@ data:
   valid_prop: 0.1
 
 model:
-  name: METR_LA_AutoSTG1
+  name: METR_LA_AutoSTG
   node_hiddens: [32,32]
   edge_hiddens: [32,32]
   hidden_channels: 32
