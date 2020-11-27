@@ -7,15 +7,15 @@ This is the PyTorch implementation of AutoSTG.
 ## Requirements for Reproducibility
 
 ### System Requirements:
-- System: CentOS 7 (Linux Kernel: 4.18.9)
-- Language: Python 3.7.7
-- Devices: a single Tesla V100 GPU
+- System: Ubuntu 16.04
+- Language: Python 3.5
+- Devices: a single GeForce GTX 1080 Ti CPU
 
 ### Library Requirements:
 - numpy == 1.19.1
 - pandas == 1.1.1
-- torch ==1.6.0
-- torchvision ==0.7.0
+- torch == 1.1.0
+- torchvision == 0.3.0
 - tables == 3.6.1
 - ruamel.yaml == 0.16.12
 
@@ -34,9 +34,9 @@ The description please refers to the repository of [DCRNN](https://github.com/li
 
 ---
 
-## Model Training & Testing
+## Model Training
 
-[src/run_on_gpu0.sh](src/train_on_gpu0.sh) given an example to train and test the model on the two datasets:
+[src/train_on_gpu0.sh](src/train_on_gpu0.sh) gives an example to search and train the model on the two datasets:
 
 1. `cd src/`.
 2. The settings of the models are in the folder [model](/model), saved as yaml format. 
@@ -45,12 +45,15 @@ The description please refers to the repository of [DCRNN](https://github.com/li
 3. All trained model will be saved in `param/`. 
 4. Searching and training with the given shell script:
    1. `cd src/` .
-   2. `bash run_on_gpu0.sh`. The code will firstly load the best epoch from `params/`, and then train the models for `[epoch]`. 
-6. Testing the model for PEMS-BAY on GPU 0: 
-    ```
-    CUDA_VISIBLE_DEVICES=0 python train.py --config ../model/PEMS_BAY_FULL.yaml --epoch 0
-    ``` 
-   The code will directly give evaluation results on evaluation dataset and test dataset, without training.
+   2. `bash train_on_gpu0.sh`. The code will firstly load the best epoch from `params/`, and then train the models for `[epoch]`. 
+
+## Model Testing
+
+[src/test_on_gpu0.sh](src/test_on_gpu0.sh) gives an example to test the model on the two datasets using the trained models. Here are the instructions to execute the shell script:
+1. `cd src/`
+2. `bash test_on_gpu0.sh`.
+
+**Note that:** The given pre-trained models are trained under PyTorch 1.1.0 and can be loaded under other compatible versions (PyTorch 1.5.0 and 1.6.0 with Python 3.7 are tested) with expected behaviors (i.e., the same predicting error).  
 
 ---
 
