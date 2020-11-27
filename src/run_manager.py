@@ -118,7 +118,6 @@ class RunManager:
         }
         filename = os.path.join(save_dir, '%s.pth' % mode)
         torch.save(obj=states, f=filename)
-        # self._net.render(save_dir, self._name)
         logging.info('[eval]\tepoch[%d]\tsave parameters to %s', self._best_epoch, filename)
 
     def _save_checkpoint(self, epoch, mode):
@@ -137,7 +136,6 @@ class RunManager:
         }
         filename = os.path.join(save_dir, '%s.pth' % mode)
         # torch.save(obj=states, f=filename)
-        # self._net.render(save_dir, self._name)
         logging.info('save checkpoint-%d to %s', epoch, filename)
 
     def _add_record(self, metrics, mode):

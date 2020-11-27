@@ -4,7 +4,6 @@ import ruamel.yaml as yaml
 
 data_path = '../dataset'
 param_path = '../param'
-viz_path = '../viz'
 
 
 def dict_to_namedtuple(dic: dict):
