@@ -40,8 +40,8 @@ The description please refers to the repository of [DCRNN](https://github.com/li
 
 1. `cd src/`.
 2. The settings of the models are in the folder [model](/model), saved as yaml format. 
-   - For METR-LA: [METR_LA_AUTOSTG.yaml](model/METR_LA_AutoSTG.yaml)
-   - For PEMS-BAY: [METR_LA_AUTOSTG.yaml](model/PEMS_BAY_AutoSTG.yaml)
+   - For METR-LA: [METR_LA_AutoSTG.yaml](model/METR_LA_AutoSTG.yaml)
+   - For PEMS-BAY: [METR_LA_AutoSTG.yaml](model/PEMS_BAY_AutoSTG.yaml)
 3. All trained model will be saved in `param/`. 
 4. Searching and training with the given shell script:
    1. `cd src/` .
