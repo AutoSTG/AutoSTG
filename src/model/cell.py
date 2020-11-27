@@ -4,9 +4,6 @@ from model.mixed_op import MixedOp
 from model.mode import Mode
 
 
-# from graphviz import Digraph
-
-
 class Cell(nn.Module):
     def __init__(self, channels, num_mixed_ops, candidate_op_profiles):
         super(Cell, self).__init__()
@@ -46,9 +43,6 @@ class Cell(nn.Module):
     def __repr__(self):
         raise NotImplementedError
 
-# def render_arch(self):
-# 	raise NotImplementedError
-
 
 class STCell(Cell):
     def __init__(self, channels, num_mixed_ops, candidate_op_profiles):
@@ -86,23 +80,3 @@ class STCell(Cell):
         from utils.helper import add_indent
         out_str = 'STCell {\n%s\n}' % add_indent('\n'.join(out_str), 4)
         return out_str
-
-# def render_arch(self, save_dir, save_name):
-# 	g = Digraph(comment='architecture of %s' % save_name, format='png')
-# 	g.node_attr['style'] = 'filled'
-
-# 	node_idx = 0
-# 	node_names = ['input']
-# 	for i in range(self._num_mixed_ops):
-# 		g.edge(node_names[node_idx], str(len(node_names)), label=self._mixed_ops[i].render_name())
-# 		if node_idx + 1 >= len(node_names):
-# 			node_names += [str(len(node_names))]
-# 			node_idx = 0
-# 		else:
-# 			node_idx += 1
-# 	if node_idx != 0:
-# 		node_names += [str(len(node_names))]
-
-# 	for i in node_names[:]:
-# 		g.edge(i, 'output')
-# 	g.render(os.path.join(save_dir, '%s' % save_name))

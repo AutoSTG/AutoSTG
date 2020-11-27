@@ -3,7 +3,7 @@ from pathlib import Path
 if __name__ == "__main__":
     file_list = Path('../model/GridSearch').iterdir()
     bash_files = [
-        open('run_on_gpu0.sh', 'w'),
+        open('train_on_gpu0.sh', 'w'),
         open('run_on_gpu1.sh', 'w'),
         open('run_on_gpu2.sh', 'w'),
         open('run_on_gpu3.sh', 'w'),

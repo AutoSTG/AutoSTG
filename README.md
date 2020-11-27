@@ -36,7 +36,7 @@ The description please refers to the repository of [DCRNN](https://github.com/li
 
 ## Model Training & Testing
 
-[src/run_on_gpu0.sh](src/run_on_gpu0.sh) given an example to train and test the model on the two datasets:
+[src/run_on_gpu0.sh](src/train_on_gpu0.sh) given an example to train and test the model on the two datasets:
 
 1. `cd src/`.
 2. The settings of the models are in the folder [model](/model), saved as yaml format. 

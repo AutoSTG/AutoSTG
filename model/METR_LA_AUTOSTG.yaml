@@ -1,6 +1,6 @@
 ---
 sys:
-  seed: 4
+  seed: 1
 
 data:
   path: METR-LA
@@ -20,7 +20,7 @@ model:
   hidden_channels: 32
   skip_channels: 256
   end_channels: 512
-  layer_names: [STCell, Pooling, STCell, STCell, Pooling, STCell, STCell]
+  layer_names: [STCell, AvgPooling, STCell, STCell, AvgPooling, STCell, STCell]
   num_mixed_ops: 6
   candidate_op_profiles: [
     [Zero, {
@@ -41,7 +41,7 @@ model:
     [MetaConv, {
       type_name: tc,
       node_in_hidden: 32,
-      meta_hiddens: [8,2],
+      meta_hiddens: [8,4],
       kernel_size: [1,3],
       stride: [1,1],
       padding: [0,1],
@@ -51,7 +51,7 @@ model:
     }],
     [MetaGraphConv, {
       edge_in_hidden: 32,
-      meta_hiddens: [8,8],
+      meta_hiddens: [8,4],
       num_graphs: 4,
       order: 2,
       use_bn: True,

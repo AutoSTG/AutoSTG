@@ -5,11 +5,15 @@ from model.cell import STCell
 from model.gmk_learner import GMKLearner
 from model.mode import Mode
 
+
 def create_layer(name, hidden_channels, num_mixed_ops, candidate_op_profiles):
     if name == 'STCell':
         return STCell(hidden_channels, num_mixed_ops, candidate_op_profiles)
-    if name == 'Pooling':
-        return nn.AvgPool2d(kernel_size=(1, 3), padding=(0, 1), stride=(1, 2))
+    if name == 'ConvPooling':
+        return nn.Conv2d(in_channels=hidden_channels, out_channels=hidden_channels, kernel_size=(1, 3), padding=(0, 1),
+                         stride=(1, 2))
+    if name == 'AvgPooling':
+        return nn.AvgPool2d(kernel_size=(1,3), padding=(0,1), stride=(1,2))
     raise Exception('unknown layer name!')
 
 

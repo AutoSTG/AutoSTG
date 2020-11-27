@@ -104,7 +104,7 @@ class TrafficDataset:
 
         # create dataloader
         data_loader = DataLoader(dataset=dataset, batch_size=self._batch_size_per_gpu * num_gpus, sampler=sampler,
-                                 num_workers=1, drop_last=False)
+                                 num_workers=4, drop_last=False)
         return data_loader
 
     def read_idx(self):
